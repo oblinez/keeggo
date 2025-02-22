@@ -13,15 +13,7 @@ export class SmartComponent {
     if ( !value ) return;
     value.subscribe({
       next: (value: string) => {
-        console.log(value);
-        if ( value.length > 1 ) {
-          value.split('').forEach((item: string) => {
-            this.list.push(Number(item));
-          });
-        } else {
-          this.list.push(Number(value));
-        }
-        console.log(this.list);
+        this.list.push(Number(value));
       },
     });
   }
